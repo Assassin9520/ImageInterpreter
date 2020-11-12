@@ -1,4 +1,5 @@
 # ImageInterpreter
+[EN] [application is in romanian] <br>
 An programming language designed specifically for image processing, all while being compacted in a beautiful UI.
 
 --------------------------------------------------------------------------
@@ -11,15 +12,13 @@ An programming language designed specifically for image processing, all while be
 
 # Prequisites
 <br>PHP 5.5+
-<br>XAMPP - Apache(for local webserver)
+<br>XAMPP - Apache(for local webserver) or hosted web-server is fine.
 
 --------------------------------------------------------------------------
 
 # Instructions on use 
-<br>...
-<br>...
-<br>...
-<br>...
+Please refer to Pages/help.html , which contains all the details of the 
+language and the instructions .
 
 
 --------------------------------------------------------------------------
