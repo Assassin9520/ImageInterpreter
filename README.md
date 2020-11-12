@@ -5,8 +5,9 @@ An programming language designed specifically for image processing, all while be
 --------------------------------------------------------------------------
 
 # Description - What is ImageInterpreter
-<br>...
-<br>...
+<br>
+ImageInterpreter is an interpreter that implements a specialized program language to make image processing as easy as possible. The application was built for teaching purposes, to serve future students in the laboratory rooms for studying image processing. It allows, before processing the actual images, the writing of code in a way that is as simple and intelligible as possible. The application explains the concepts of interpretation and the basics of image processing by writing the given source code. This document describes the development of the application, along with the algorithms that power its operation (such as the interpreter, effective image processing), and also some examples of applying image processes using the language in the ImageInterpreter application. The purpose of the ImageInterpreter application is didactic, namely to teach students how to apply image processing using a robust programming language.
+<br>
 
 --------------------------------------------------------------------------
 
