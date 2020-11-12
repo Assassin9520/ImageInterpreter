@@ -1,0 +1,288 @@
+<html>
+
+<head>
+	<title> Manual Ajutor instructiuni </title>
+</head>
+
+<body>
+
+<!-- start html code for instructions -->
+
+
+<p>&nbsp;</p>
+<p><h1><strong>Instructiunea Incarca</strong></h1></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aceasta instructiune va incarca o imagine locala(de pe disk) in aplicatia noastra. &nbsp;Aceasta imagine va putea fi folosita in continuare in aplicatie , aplicandu-se transformari/ prelucrari asupra sa.</p>
+<p><strong>Sintaxa:</strong></p>
+<p>imagine = incarca "resurse/imagine.jpg"</p>
+<p>Instructiunea aceasta va incarca in memoria aplicatiei noastre imagine, aceasta fiind stocata in variabila &ldquo; imagine&rdquo;, care se poate observa in sintaxa de mai sus.</p>
+<p><strong>Gramatica instructiunii incarca:</strong></p>
+<p>Incarca &nbsp;-&gt;&nbsp; &nbsp;&lt;VARIABLE&gt; &nbsp;&lt;EQ&gt; &nbsp;&lt;INCARCA&gt; &nbsp;&lt;STRING&gt;&nbsp;</p>
+<p>Productia "Incarca" de mai sus pentru instructiunea Incarca care va fii folosita in limbajul nostru&nbsp; va produce urmatorii 4 operatori terminali: VARIABLE , EQ , INCARCA , STRING.</p>
+<p>In mod practic , pentru ca aplicatia noastra sa detecteze cu succes instructiunea incarca , este nevoie sa apara in codul sursa , pe rand , urmatorii operatori terminali:</p>
+<ul>
+<li><strong>VARIABLE</strong> - desemneaza un atom de tip variabila care va identifica cu succes in limbajul nostru numele unei variabile</li>
+<li><strong>EQ</strong> - desemneaza un atom de tip EGAL ( = )</li>
+<li><strong>INCARCA - </strong>desemneaza faptul ca in limbajul nostru trebuie sa urmeze un atom cu numele "incarca"</li>
+<li><strong>STRING - </strong>trebuie sa urmeze un atom de tip sir de caractere</li>
+</ul>
+<p>Un exemplu in folosirea acestei gramatici este chiar cel din sintaxa instructiunii de incarcare imagine, exemplu fiind dat mai sus.</p>
+<p>Pentru intelegerea functionarii celor 4 operatori terminali din gramatica instructiunii Incarca Imagine,&nbsp; se poate consulta capitolul 4. Implementare - 4.2 Analiza Lexicala pentru intelegerea lucrului cu atomi, constructia lor si varii exemple de functionare.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea Definire matrice</strong></h1></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aceasta instructiune va permite definirea unui tablou (array) in memoria aplicatiei noastre. Acest tablou va putea fi folosit mai departe in sintaxa altor instructiuni (precum instrctiunea de filtrare, de erodare, sau de dilatare). &nbsp;Aceste instructiuni date anterior se bazeaza pe acest tablou pentru prelucrare asupra imaginii.</p>
+<p><strong>Sintaxa:</strong></p>
+<p>array_filtrare = [ &nbsp;2,0,0;&nbsp; &nbsp;0,-1,0.11;&nbsp; &nbsp;0.68,0,-1; &nbsp;]</p>
+<p>Acest tablou poate fi de orice dimensiune (1, 2x2, 3x3, 5x5, etc&hellip;). Insa functiile noastre de prelucrare lucreaza cu matrici impare si patratice(ex. 3x3, 5x5 , 7x7)</p>
+<p><strong>Gramatica instructiune:</strong></p>
+<p>DefinesteMatrice&nbsp;&nbsp; -&gt; &lt;VARIABLE&gt; &nbsp;&lt;EQ&gt; &nbsp;&lt;ARRAY&gt;</p>
+<p>Productia "DefinesteMatrice" pentru gramatica instructiunii de definire matrice va produce un operator VARIABLE , ca in instructiunea de incarcare imagine , urmat de un operator EQ , urmat de un operator ARRAY(matrice). Atunci cand se vor gasii acesti operatori in codul nostru sursa in ordinea specificata , limbajul nostru va stii ca a gasit o instructiune de tip DefinesteMatrice</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea Filtreaza</strong></h1></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructiunea filtreaza realizeaza aplicarea unui filtru asupra unei imagini cu ajutorul unei matrici (instructiune explicata anterior). Aceasta instructiune practic realizeaza convolutia imaginii principale cu matricea data ca parametru(practice , plimba matricea definita pe imaginea noastra si pentru fiecare pixel in parte , realizeaza inmultirea pixel curent matrice cu pixelul de dedesuptul matricei din imagine , facand asta pana la finalul matricei de filtrare. Apoi se aduna toate valorile scoase din produse si se seteaza valoarea pixelului curent din imagine cu respectiva valoare).</p>
+<p><strong>Sintaxa:</strong></p>
+<p>Imagine_filtrata = filtreaza imagine_1 array_filtrare</p>
+<p><em>Figura 4. Prezentare convolutie (imagine preluata din [1])</em></p>
+<p>In imaginea de mai sus se poate observa functionarea convolutiei.</p>
+<p><strong>Gramatica instructiunii:</strong></p>
+<p>Filtreaza&nbsp; &nbsp;-&gt; &nbsp;&nbsp;&nbsp;&lt;VARIABLE&gt; &nbsp;&nbsp;&lt;EQ&gt; &nbsp;&nbsp;&lt;FILTREAZA&gt; &nbsp;&nbsp;&lt;VARIABLE&gt;&nbsp; &nbsp;&lt;VARIABLE&gt;</p>
+<p>Instructiunea de filtrare are o gramatica o idee mai lunga. Gramatica pentru instructiunea "Filtreaza" va produce , pe rand operatorii:</p>
+<ul>
+<li><strong>VARIABLE</strong> - operator terminal prin care se specifica numele acestei variabile filtrata</li>
+<li><strong>EQ</strong> - din nou operator terminal prin care se detecteaza prezenta semnului <strong>=</strong> in gramatica</li>
+<li><strong>FILTREAZA</strong> - operator terminal prin care se identifica cuvantul cheie "filtreaza" in instructiune</li>
+<li><strong>VARIABLE</strong> - din nou un operator de tip VARIABLE prin care se va specifica in instructiune numele variabilei pentru filtrare , asa cum se poate observa in sintaxa instructiunii</li>
+<li><strong>VARIABLE</strong> - in final , un operator de tip VARIABLE prin care se va specifica in instructiune numele matricei de filtrare, asa cum se poate observa in sintaxa instructiunii</li>
+</ul>
+<p>Astfel , la detectia acestor 5 operatori terminali , instructiunea de filtrare a fost detectata cu succes in limbajul nostru.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea Conversie grayscale</strong></h1></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructiunea de conversie grayscale, dupa cum sugereaza si numele , realizeaza conversia unei imagini RGB(imagine colorata) in imagine cu nuante de gri ( extrage luminanta imaginii )</p>
+<p><strong>Sintaxa:</strong></p>
+<p>imagine = &nbsp;luminanta &nbsp;imagine_1</p>
+<p><strong>Gramatica instructiunii:</strong></p>
+<p>Luminanta&nbsp;&nbsp; &nbsp;&nbsp;-&gt; &nbsp;&nbsp;&lt;VARIABLE&gt;&nbsp; &nbsp;&lt;EQ&gt; &nbsp;&nbsp;&lt;LUMINANTA&gt;&nbsp; &nbsp;&lt;VARIABLE&gt;</p>
+<p>Gramatica care va produce instructiunea pentru conversie in nuante de gri a unei imagini se numeste , in limbaj autohton, Luminanta.</p>
+<p>Deci , in mod similar instructiunilor observate mai sus, gramatica Luminanta va produce un operator terminal VARIABLE , urmat neaparat de un operator EQ( = ), urmat de un operator cheie LUMINANTA( prin care se poate identifica aceasta instructiune ) , si urmat de un alt operator VARIABLE prin care se specifica imaginea care se va converti in nuante de gri. Un exemplu de utilizare poate fi gasit in sintaxa acestei instructiuni.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea de tip Bloc Repeta(Repetare instructiuni multiple)</strong></h1></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aceasta instructiune este defapt un bloc de tip repeta in care se vor repeta instructiunile puse in interiorul blocului de numarul de ori ales de utilizator/ programator.</p>
+<p><strong>Sintaxa:</strong></p>
+<p>repeta &nbsp;3&nbsp; {</p>
+<p>&nbsp;&nbsp; <strong>//</strong>instructiuni de repetat aici&hellip;</p>
+<p>}</p>
+<p>Una din puterile acestei instructiuni bloc este de a realiza parcurgeri recursive asupra unei imagini(spre exemplu , blurare progresiva a unei imagini).</p>
+<p><strong>Gramatica instructiunii:</strong></p>
+<p>Repeta -&gt; &nbsp;&lt;REPETA_F&gt; &lt;NUMBER&gt; &lt;OPEN_BRACE&gt; {Instructiune}* &lt;CLOSE_BRACE&gt;</p>
+<p>Gramatica instructiunii de repetare este mai bogata in operatori , astfel ea va produce:</p>
+<ul>
+<li><strong>REPETA_F -</strong> cuvantul cheie pentru detectia instructiunii bloc de tip Repeta</li>
+<li><strong>NUMBER</strong> - operator terminal care identifica un numar</li>
+<li><strong>OPEN_BRACE - </strong>operator terminal care va specifica faptul ca urmeaza o acolada deschisa ( { )</li>
+<li><strong>{Instructiune}* - </strong>productie a gramaticii noastre care specifica aceea ca urmeaza o instructiune repetata de ori cate ori(sau niciodata , sau de mai multe ori)</li>
+<li><strong>CLOSE_BRACE - </strong>operator terminal care va specifica faptul ca urmeaza o acolada inchisa( } )</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<p>Daca acest pattern este identificat in limbajul nostru , atunci se va stii ca avem de a face cu o instructiune bloc de tip Repeta.</p>
+<p><strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea Extragere componenta culoare</strong></h1></p>
+<p>Aceasta instructiune va extrage o componenta (una din componentele rosu , verde , sau albastru din imaginea de tip RGB ) din imaginea data ca parametru si va salva noua imagine in aplicatie doar in nuanta selectata</p>
+<p><strong>Sintaxa:</strong></p>
+<p>imagine_rosu&nbsp; =&nbsp; &nbsp;extrage_componenta &nbsp;"rosu" &nbsp;imagine_1</p>
+<p><strong>Gramatica instructiunii:</strong></p>
+<p>ExtrageComponenta &nbsp;&nbsp;-&gt;&nbsp; &nbsp;&lt;VARIABLE&gt; &lt;EQ&gt; &lt;EXTRAGE_COMPONENTA&gt;&nbsp; (&lt;RED&gt; | &lt;GREEN&gt; | &lt;BLUE&gt;)&nbsp; &lt;VARIABLE&gt;&nbsp;</p>
+<p>Gramatica pentru instructiunea ExtrageComponenta va produce , pentru detectia reusita a acestei instructiuni , urmatorii operatori :</p>
+<ul>
+<li><strong>VARIABLE - </strong>operator de tip variabila care specifica numele variabilei curente</li>
+<li><strong>EQ</strong> - operatorul egal( = )</li>
+<li><strong>EXTRAGE_COMPONENTA</strong> - operator cheie pentru detectia acestei instructiuni(practic , reprezentat de sirul extrage_componenta)</li>
+<li><strong>( RED | GREEN | BLUE) - </strong>&nbsp;operatorul RED , sau operatorul GREEN , sau operatorul BLUE , -- unde red , green sau blue sunt tokeni de tip STRING, in care scrie doar "rosu" pentru operatorul &lt;RED&gt; , "verde" pentru operatorul &lt;GREEN&gt; , "albastru" pentru operatorul &lt;BLUE&gt;</li>
+<li><strong>VARIABLE - </strong>operator terminal de tip variabila prin care se specifica numele variabilei din care se va extrage componenta de culoare</li>
+</ul>
+<p><strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea Combina imagini</strong></h1></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructiunea combina imagini va combina 3 imagini(sau 2 valori numerice si cel putin o imagine) date ca parametrii si va construii o singura imagine din cele 3. &nbsp;Practic , pentru fiecare din cele 3 imagini, pentru prima imagine , va prelua valoarea acesteia de pe componenta de &ldquo;ROSU&rdquo; si o va plasa pe imaginea finala. Aceeasi pasi se aplica si pentru urmatoarele 2 imagini date ca parametrii , respectiv , pentru imaginea a2a , va plasa pe componenta finala de &ldquo;VERDE&rdquo; valoare componentei de verde , iar pentru imaginea a3a , va prelua componenta de &ldquo;ALBASTRU&rdquo;.</p>
+<p><strong>Sintaxa(ex cu valoare numerica)</strong></p>
+<p>imagine_combinata = combina 255 imagine_grayscale imagine_1</p>
+<p>Aceasta sintaxa va pune pe componentele imaginii finale :255 pentru rosu , componenta verde a imagine_grayscale pe verde si componenta albastra a imagine_1 pe albastru.</p>
+<p><strong>Sintaxa(ex cu doar cu imagini)</strong></p>
+<p>imagine_combinata2 = combina imagine_1&nbsp;&nbsp; imagine_2&nbsp;&nbsp; imagine_3</p>
+<p>Acelasi lucru se aplica si pentru aceasta sintaxa.</p>
+<p>Pentru a intelege mai bine functionarea acestei metode de procesare, se poate observa figura urmatoare:</p>
+<p>Figura i1. Efect utilizare functie combina.</p>
+<p>Pentru a obtine imaginea combinata , in <strong>figura i1 </strong>s-a folosit urmatoarea sintaxa a functiei combina:</p>
+<p>img_combinata = combina &nbsp;255&nbsp; &nbsp;img_grayscale &nbsp;&nbsp;img_g</p>
+<p><strong>Unde:</strong></p>
+<p>-Valoarea 255 reprezinta valoare numerica care se va aplica pe componenta de Rosu in imaginea finala</p>
+<p>- img_grayscale reprezinta imaginea noastra in original(cea din stanga din figura i1.) convertita in nuante de gri , iar mai apoi folosita pe componenta de VERDE a imaginii noastre finala intoarsa de instructiunea combina.</p>
+<p>-img_g reprezinta imaginea noastra in original care contine doar componenta de verde(convertita cu functia de extragere componenta), iar mai apoi aceasta imagine aplicata pe componenta ALBASTRU a imaginii finale returnata de instructiunea combina.</p>
+<p>Astfel , s-a format efectul care poate fi vizualizat in figura i1.</p>
+<p><strong>Gramatica instructiunii:</strong></p>
+<p>Combina&nbsp; -&gt; &lt;VARIABLE&gt; &lt;EQ&gt; &lt;COMBINA&gt; (&lt;VARIABLE&gt;|&lt;NUMBER&gt;)&nbsp; (&lt;VARIABLE&gt;|&lt;NUMBER&gt;)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&lt;VARIABLE&gt;|&lt;NUMBER&gt;)</p>
+<p>Gramatica pentru combinare de imagini seamana foarte mult cu gramatica pentru extragere componentei de culoare despre care am discutat anterior, astfel ca ea contine:</p>
+<ul>
+<li><strong>VARIABLE - </strong>operator de tip variabila care specifica numele variabilei in care se va salva imaginea combinata</li>
+<li><strong>EQ</strong> - operatorul egal( = )</li>
+<li><strong>COMBINA</strong> - operator cheie pentru detectia acestei instructiuni(practic , reprezentat de sirul combina)</li>
+<li><strong>(VARIABLE | NUMBER )</strong> - prin acest bloc al gramaticii de tip SAU , se specifica o variabila sau un numar . Se poate observa ca acest bloc a fost folosit de 3 ori in gramatica instructiunii de combinare. Aceasta este datorita faptului ca se vor specifica 3 variabile sau numere in instructiunea de combinare , fiecare din aceste 3 structuri vor merge individual pe canalele imaginii finale , anume Red, Green , sau Blue.</li>
+</ul>
+<p>Exemple se pot observa in sintaxele instructiunii de combinare de mai sus.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea Aditivare imagini</strong></h1></p>
+<p>Aceasta instructiune necesita 2 parametrii:</p>
+<ul>
+<li>o imagine</li>
+<li>o imagine / valoare numerica</li>
+</ul>
+<p>Practic, la construirea imaginii finale se preiau pixelii din prima imagine data ca parametru si se aduna cu pixeli corespondenti din a 2 a imagine data ca parametru.</p>
+<p>Daca al 2 lea parametru este numar(valoare numerica), atunci pentru fiecare pixel din prima imagine data ca parametru , se va aduna acea valoare numerica la la fiecare pixel si acea imagine va fi pusa in variabila finala.</p>
+<p><strong>Sintaxa(ex cu valoare numerica):</strong></p>
+<p>img_plus = imagine_1 + 50</p>
+<p><strong>Sintaxa(ex cu imagine):</strong></p>
+<p>img_plus = imagine_1 + imagine_2</p>
+<p><strong>Gramatica instructiunii:</strong></p>
+<p>InsumareImagini-&gt; &lt;VARIABLE&gt;&lt;EQ&gt;&lt;VARIABLE&gt;&lt;BINARY_OPERATOR&gt; (&lt;VARIABLE&gt;|&lt;NUMBER&gt;)</p>
+<p>Gramatica pentru <strong>InsumareImagini , </strong>pentru detectia cu succes a instructiunii de insumare imagini ,produce urmatoarele:</p>
+<ul>
+<li><strong>VARIABLE - </strong>operator de tip variabila care specifica numele variabilei in care se va salva imaginile insumate sau imaginea insumata cu un numar intreg</li>
+<li><strong>EQ</strong> - operatorul egal( = )</li>
+<li><strong>VARIABLE - </strong>operator terminal prin care se specifica numele variabilei care contine prima imagine ce urmeaza a fi insumata</li>
+<li><strong>BINARY_OPERATOR</strong> - operator cheie pentru detectia acestei instructiuni(practic , reprezentat de simbolul +(plus) )</li>
+<li><strong>( VARIBLE | NUMBER )</strong> - operatori terminali prin care se specifica in grmatica acestei instructiuni faptul ca urmeaza o variabila sau un numar. Practic , daca se va speficia o varabila , se vor insuma pixeli a doua imagini , altfel , se vor insuma pixelii primei imagini cu o valoare intreaga data de utilizator.</li>
+</ul>
+<p>Exemplu pentru folosirea acestei gramatici poate fi observat in sintaxa instructiuni specificata mai sus.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea Binarizare imagine</strong></h1></p>
+<p>Aceasta instructiune va binariza(transforma o imagine in&nbsp; alb/negru ) dupa un prag de binarizare . Spre exemplu, daca pragul de binarizare este 127 ,&nbsp; dupa parcurgerea imaginii pixel cu pixel, daca media valorilor pixelului curent este mai mare de 127 ,&nbsp; pixelul curent final va fi setat la ALB.</p>
+<p>Altfel , va fi setat la NEGRU.</p>
+<p><strong>Sintaxa:</strong></p>
+<p>imagine_binara &nbsp;= &nbsp;&nbsp;binarizeaza&nbsp; &nbsp;imagine_1 &nbsp;&nbsp;127</p>
+<p><strong>Gramatica instructiunii:</strong></p>
+<p>Binarizeaza&nbsp; -&gt; &lt;VARIABLE&gt; &lt;EQ&gt; &lt;BINARIZEAZA&gt; &lt;VARIABLE&gt; &lt;NUMBER&gt;</p>
+<p>Instructiunea de Binarizare produce urmatoarele productii:</p>
+<ul>
+<li><strong>VARIABLE - </strong>operator de tip variabila care specifica numele variabilei in care se va salva imaginea binarizata</li>
+<li><strong>EQ</strong> - operatorul egal( = )</li>
+<li><strong>BINARIZEAZA</strong> - operator cheie pentru detectarea acestei instructiuni</li>
+<li><strong>VARIABLE - </strong>operator terminal prin care se specifica numele variabilei care urmeaza a fi trecuta in imagine alb/negru</li>
+<li><strong>NUMBER - </strong>operator terminal prin care se specifica numarul intre 0 - 255 dupa care se va face binarizarea imaginii date ca parametru in sintaxa acestei instructiuni.</li>
+</ul>
+<p>Bineinteles , pentru un exemplu al folosirii gramatici , se poate vizualiza sintaxa acestei instructiuni.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea Erodare(eroziune) imagine</strong></h1></p>
+<p>Erodarea , alaturi de dilatare , reprezinta 2 forme de operatii morfologice asupra imaginilor binarizate.</p>
+<p>&nbsp;Inainte de toate , instructiunea de erodare a unei imagini functioneaza numai pe imagini convertite in nuante alb negru.</p>
+<p>Erodarea unei imagini presupune micsorarea partilor de alb din imaginea sursa , folosind o matrice (tablou) de erodare.</p>
+<p>De asemenea , mai trebuie notat faptul ca eroziunea unei imagini practic , va netezi marginile zonelor albe.</p>
+<p>Efectul erodarii unei imagini binarizata(trecuta in nuante de alb/negru ) se poate observa in figura urmatoare:</p>
+<p>Figura i2. Explicarea efectului de eroziune</p>
+<p>&nbsp;</p>
+<p>Asadar, dupa cum se poate observa , eroziunea implica micsorarea partilor de alb din imagine. In exemplul din figura de mai sus s-a folosit o matrice de eroziune 3x3 de forma:</p>
+<p>[ 1,&nbsp; 1,&nbsp; 1,</p>
+<p>&nbsp;1,&nbsp; 1,&nbsp; 1,</p>
+<p>&nbsp;&nbsp;&nbsp; 1,&nbsp; 1,&nbsp; 1,&nbsp; ]</p>
+<p>Practic , matricea de mai sus ii spune metodei de eroziune , ca atunci cand gaseste un punct de culoare neagra, sa inlocuiasca toti pixelii care inconjoara punctul respectiv cu cu negru.(efectuandu-se astfel <strong>erodarea albului</strong>).</p>
+<p><strong>Sintaxa:</strong></p>
+<p>array_dilatare= [&nbsp; 1,1,1; 1,1,1; 1,1,1;&nbsp; ]</p>
+<p>imagine_erodata = erodeaza imagine_binara array_dilatare</p>
+<p><strong>Gramatica instructiunii:</strong></p>
+<p>Erodeaza -&gt; &nbsp;&lt;VARIABLE&gt; &nbsp;&lt;EQ&gt; &nbsp;&lt;ERODEAZA&gt; &nbsp;&lt;VARIABLE&gt; &nbsp;&lt;ARRAY&gt;</p>
+<p>Gramatica productiei de Eroziune va produce , pentru detectarea cu succes a acestei instructiuni ,&nbsp; urmatoarele productii:</p>
+<ul>
+<li><strong>VARIABLE - </strong>operator de tip variabila care specifica numele variabilei in care se va salva imaginea procesata prin eroziune</li>
+<li><strong>EQ</strong> - operatorul egal( = )</li>
+<li><strong>ERODEAZA</strong> - operator cheie pentru detectarea acestei instructiuni( sirul de caracterele erodeaza)</li>
+<li><strong>VARIABLE - </strong>operator terminal prin care se specifica numele variabilei care urmeaza a fi trecuta prin procesul de eroziune</li>
+<li><strong>ARRAY - </strong>operator terminal prin care se specifica in aceasta instructiune matricea cu ajutorul careia se va efectua eroziunea.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea Dilatare imagine</strong></h1></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dilatarea imaginilor binarizate reprezinta cea de a doua fucntie de lucru cu operatii morfologice.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instructiunea de dilatare a imaginii lucreaza in antiteza cu operatia de eroziune a unei imagini.&nbsp; Practic, acest lucru inseamna ca <strong>operatia de dilatare</strong> a unei imagini binarizata efectueaza <strong>marirea suprafetelor de alb </strong>din imaginea(binarizata) data ca parametru, de asemenea , aceasta efectuandu-se dupa o matrice de dilatare, de data aceasta.</p>
+<p>Efectul dilatarii unei imagini in nuante alb/negru se poate observa in figura urmatoare:</p>
+<p>Figura i3. Dilatarea(marirea) suprafetelor de alb din imagine alb/negru</p>
+<p>De asemenea, si aici s-a folosit o matrice de dilatare de 3x3 cu valori de 1( 1- pixel aprins, 0 - pixel stins ).</p>
+<p><strong>Sintaxa:</strong></p>
+<p>array_dilatare= [&nbsp; 1,0,1; 1,1,1; 1,0,1;&nbsp; ]</p>
+<p>imagine_dilatata = dilateaza imagine_binara array_dilatare</p>
+<p><strong>Obs:</strong></p>
+<p>Se observa ca matricea de dilatare poate primi doar valori de 0 , respectiv 1.</p>
+<p><strong>Gramatica instructiunii:</strong></p>
+<p>Dilateaza &nbsp;-&gt; &nbsp;&lt;VARIABLE&gt; &nbsp;&lt;EQ&gt; &nbsp;&lt;DILATEAZA&gt; &nbsp;&lt;VARIABLE&gt; &nbsp;&lt;ARRAY&gt;</p>
+<p>Gramatica productiei de Dilatare va produce , pentru detectarea cu succes a acestei instructiuni ,&nbsp; urmatoarele productii:</p>
+<ul>
+<li><strong>VARIABLE - </strong>operator de tip variabila care specifica numele variabilei in care se va salva imaginea procesata prin dilatare</li>
+<li><strong>EQ</strong> - operatorul egal( = )</li>
+<li><strong>DILATEAZA</strong> - operator cheie pentru detectarea acestei instructiuni( sirul de caracterele "dilateaza")</li>
+<li><strong>VARIABLE - </strong>operator terminal prin care se specifica numele variabilei care urmeaza a fi trecuta prin procesul de dilatare</li>
+<li><strong>ARRAY - </strong>operator terminal prin care se specifica in aceasta instructiune matricea cu ajutorul careia se va efectua dilatarea.</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea Blurare imagine</strong></h1></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aceasta instructiune , dupa cum sugereaza si numele , realizeaza functia de blurare(incetosare ) a imaginii.</p>
+<p>Efectul in urma instructiunii de blurare se poate observa in figura alaturata:</p>
+<p>Figura i4. blurare imagine instructiune</p>
+<p><strong>Sintaxa:</strong></p>
+<p>imagine_blurata = blureaza imagine_1</p>
+<p><strong>Gramatica instructiunii:</strong></p>
+<p>Blureaza&nbsp;&nbsp; -&gt; &lt;VARIABLE&gt; &lt;EQ&gt; &lt;BLUREAZA&gt; &lt;VARIABLE&gt;</p>
+<p>Instructiunea de blurare va produce urmatorii operatori:</p>
+<ul>
+<li><strong>VARIABLE</strong> - variabila in care se va stoca imaginea procesata prin blurare</li>
+<li><strong>EQ - </strong>operatorul terminal identificat prin simbolul = (egal)</li>
+<li><strong>BLUREAZA</strong> - operator terminal care va identifica aceasta instructiune ( reprezentat prin sirul de caractere "blureaza" )</li>
+<li><strong>VARIABLE </strong>- in final , un operator terminal de tip variabila prin care se specifica imaginea ce urmeaza a fi blurata</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p><h1><strong>Instructiunea de afisare imagine</strong></h1></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aceasta instructiune , odata apelata in aplicatia noastra , va afisa in cadranul (divizia) de afisare imaginea data ca parametru. (a se vedea figura 2.)</p>
+<p>Instructiunea e foarte utila deoarece prin intermediul acesteia putem observa toate schimbarile prin care trece procesarea de imagini.</p>
+<p><strong>Sintaxa:</strong></p>
+<p>afiseaza imagine</p>
+<p>Unde imagine este o variabila in care a fost incarcata sau procesata o imagine cu oricare din instructiunile de prelucrare descrise anterior</p>
+<p>&nbsp; </p><p>&nbsp; </p>
+
+<!-- end html code for instructions -->
+
+</body>
+
+</html>
