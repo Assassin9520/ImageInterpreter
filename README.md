@@ -32,7 +32,8 @@ An programming language designed specifically for image processing, all while be
 <br>
 <br>
 -
-SCREENSHOTS IN PRODUCTION:
+<b>SCREENSHOTS IN PRODUCTION:</b>
+
 ![img2](https://imgur.com/w1qj3uP.png)
 
 ![img3](https://imgur.com/EdIOCFv.png)
