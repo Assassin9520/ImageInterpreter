@@ -34,10 +34,17 @@ An programming language designed specifically for image processing, all while be
 -
 SCREENSHOTS IN PRODUCTION:
 ![img2](https://imgur.com/w1qj3uP.png)
+
 ![img3](https://imgur.com/EdIOCFv.png)
+
 ![img4](https://imgur.com/pJSWNgr.png)
+
 ![img5](https://imgur.com/xNxhuCr.png)
+
 ![img6](https://imgur.com/27fLlH5.png)
+
 ![img7](https://imgur.com/ulKwtxU.png)
+
 ![img8](https://imgur.com/aPzzWtU.png)
+
 ![img9](https://imgur.com/hLReleI.png)
