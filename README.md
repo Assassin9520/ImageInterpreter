@@ -27,6 +27,17 @@ An programming language designed specifically for image processing, all while be
 
 # Results 
 <br> Interface explained:
+(https://i.imgur.com/zj70JEd.png)
 
-![interfata explicata](https://imgur.com/zj70JEd)
-
+<br>
+<br>
+-
+SCREENSHOTS IN PRODUCTION:
+(https://imgur.com/w1qj3uP.png)
+(https://imgur.com/EdIOCFv.png)
+(https://imgur.com/pJSWNgr.png)
+(https://imgur.com/xNxhuCr.png)
+(https://imgur.com/27fLlH5.png)
+(https://imgur.com/ulKwtxU.png)
+(https://imgur.com/aPzzWtU.png)
+(https://imgur.com/hLReleI.png)
