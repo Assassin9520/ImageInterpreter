@@ -1,17 +1,19 @@
 # ImageInterpreter
 An programming language designed specifically for image processing, all while being compacted in a beautiful UI.
 
+--------------------------------------------------------------------------
 
-# DESCRIPTION - What is ImageInterpreter
+# Description - What is ImageInterpreter
 <br>...
 <br>...
 
+--------------------------------------------------------------------------
 
-# PREQUISITES 
+# Prequisites
 <br>PHP 5.5+
 <br>XAMPP - Apache(for local webserver)
 
-
+--------------------------------------------------------------------------
 
 # Instructions on use 
 <br>...
@@ -23,6 +25,6 @@ An programming language designed specifically for image processing, all while be
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 
-<b>RESULTS </b>
+# Results 
 <br>screenshots to be inserted here
 
